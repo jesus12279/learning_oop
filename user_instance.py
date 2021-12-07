@@ -1,9 +1,14 @@
-import json
+from users import get_formatted_name
 
-from users import UserName
+print("Enter 'q' at any time to quit.")
 
-user_1 = UserName('Willie')
-
-print(user_1.username)
-user_1.greet_user()
+while True:
+	first = input("\nPlease give me a first name: ")
+	if first == 'q':
+		break
+	last = input("\nPlease give me alast name: ")
+	if last == 'q':
+		break
+	formatted_name = get_formatted_name(first, last)
+	print("\t Neatly formatted name: " + formatted_name + "!")
 
